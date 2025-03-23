@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgb(144, 192, 255);
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header-title {
+
+    margin-left: 100px;
+}
+
+.ul #list {
+    display: flex;
+    text-indent: 100px;
+    list-style: none;
+    margin-left: 50px;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-size: x-large;
+    color: whitesmoke;
+}
+
+
+.nav {
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+}
+
+.nav h1 {
+    margin: 0 auto;
+}
+
+
+
+
+.container {
+    display: flex;
+    margin: 20px auto;
+    justify-content: space-between;
+
+}
+
+.box {
+
+    width: 200px;
+    height: 300px;
+    background-color: rgb(225, 215, 215);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+.bottom {
+    background-color: rgb(225, 215, 215);
+    margin: 0 auto;
+    border: 2px solid;
+    height: 140px;
+}
+
+#temp select {
+
+    padding: 5px;
+    border: 2px solid;
+    margin-left: 5px;
+
+}
+
+main {
+    width: 970px;
+    margin: 0 auto;
+}
+
+
+#h1 {
+    width: 200px;
+    margin-left: 65px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#temp {
+    margin-right: 10px;
+}
+
+#rain {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#sunny {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+#cloudy {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+hr {
+    border: 1px solid;
+}
+
+
+.bottom p {
+
+    text-align: center;
+    font-size: larger;
+}
+
+
+.bottom h2 {
+
+    text-align: left;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+.btn {
+
+    background-color: rgb(166, 166, 249);
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: right;
+    box-shadow: 3px 3px 3px;
+
+
+}
+
+.bott-text {
+    width: 900px;
+    height: 50px;
+    text-align: right;
+    margin-top: -30px;
+
+}
+
+
+.bottom img {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 70px;
+    height: 70px;
+}
+
+.number {
+    display:flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    width: 200px;
+    height: 50px;
+}
+
+.number #red{
+    color: rgb(210, 11, 11);
+}
+
+.number #blue{
+    color: blue;
+}
+
+#p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+#p2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    text-align:center
+}

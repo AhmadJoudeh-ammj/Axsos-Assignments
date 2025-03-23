@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="head" style="width: 970px; height: 90px;">
+        <div id="header-title">
+            <h1>DojoWeather</h1>
+        </div>
+
+        <div class="ul">
+            <ul id="list">
+                <li id="burbank" onclick="display(this)">Burbank</li>
+                <li id="chicago" onclick="display(this)">Chicago</li>
+                <li id="dallas" onclick="display(this)">Dallas</li>
+            </ul>
+        </div>
+    </header>
+
+
+
+    <main>
+
+        <nav class="nav">
+            <div style="width: 100px; height: 30px;">
+                <h1 id="h1">San Jose</h1>
+            </div>
+            <div style="display: flex;" id="temp">
+                <p id="p">Show tempreature in </p>
+                <select id="tempreature" onchange="convert()">
+                    <option value="c">C°</option>
+                    <option value="f">F°</option>
+                </select>
+
+            </div>
+
+        </nav>
+        <hr style="margin-top: 10px;">
+        <div class="container">
+
+            <div class="box" id="box">
+
+                <h2><b>Today</b></h2>
+                <img src="/img/some_rain.png" alt="rain" id="rain">
+                <h3>some rain</h3>
+                <Div class="number">
+                    <div>
+                        <h2 id="red">24°</h2>
+                    </div>
+                    <div>
+                        <h2 id="blue">18°</h2>
+                    </div>
+
+                </Div>
+            </div>
+
+            <div class="box" id="box">
+                <h2><b>Tomorrow</b></h2>
+                <img src="/img/some_sun.png" alt="sunny" id="sunny">
+                <h3>some sun</h3>
+                <Div class="number">
+                    <div>
+                        <h2 id="red">27°</h2>
+                    </div>
+                    <div>
+                        <h2 id="blue">19°</h2>
+                    </div>
+
+                </Div>
+
+            </div>
+
+            <div class="box" id="box">
+
+                <h2><b>Friday</b></h2>
+                <img src="/img/some_clouds.png" alt="cloud" id="cloudy">
+                <h3>some clouds</h3>
+                <Div class="number">
+                    <div>
+                        <h2 id="red">21°</h2>
+                    </div>
+                    <div>
+                        <h2 id="blue">16°</h2>
+                    </div>
+
+                </Div>
+            </div>
+
+            <div class="box" id="box">
+
+                <h2><b>Saturday</b></h2>
+                <img src="/img/some_sun.png" alt="sunny" id="sunny">
+                <h3>some sun</h3>
+                <Div class="number">
+                    <div>
+                        <h2 id="red">26°</h2>
+                    </div>
+                    <div>
+                        <h2 id="blue">21°</h2>
+                    </div>
+
+                </Div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="bottom">
+            <img src="/img/cookie.png" alt="">
+            <h2><b>Stop ! Cookie time</b></h2>
+            <div>
+                <p id="p2">We use cookies (sadly not the edible ones) to personalize content and <br>
+                    ads , to provide social media features and to analyse our traffic <a href="#">Read More</a>
+                </p>
+            </div>
+            <div class="bott-text">
+
+                <button class="btn" onclick="hide()">I Accept</button>
+
+            </div>
+
+
+
+        </div>
+
+
+    </main>
+
+
+</body>
+<script src="script.js"></script>
+
+</html>
