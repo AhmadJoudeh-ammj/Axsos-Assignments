@@ -1,0 +1,60 @@
+﻿#1. Bigge - size :
+
+def biggie_size(lst):
+        return ["big" if num > 0 else num for num in lst]
+
+#2.Count Positives : 
+
+def replace_last_with_positive_count(lst):
+        count = sum(1 for num in lst if num > 0) 
+        if lst:    
+                lst[-1] = count 
+        return lst
+
+#3.Sum-Total :
+
+def sum_list(lst):
+        return sum(lst)
+
+#4.Average : 
+
+def average_list(lst):
+        return sum(lst) / len(lst) if lst else 0
+
+5#.Length :
+
+def list_length(lst):
+        return len(lst)
+
+#6. Minimum :
+
+def min_value(lst):
+        return min(lst) if lst else False
+
+#7.Maximun :
+
+def max_value(lst):
+        return max(lst) if lst else False
+
+#8. Ultimate Analysis :
+
+def ultimate_analysis(lst):
+        if not lst:
+                return False    # Return False if the list is empty
+
+        return {
+                "sumTotal": sum(lst),
+                "average": sum(lst) / len(lst),
+                "minimum": min(lst),
+                "maximum": max(lst),
+                "length": len(lst),
+        }
+
+
+#9. Reverse List :
+
+def reverse_list(lst):
+        lst.reverse() 
+        return lst
+
+

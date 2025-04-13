@@ -1,0 +1,76 @@
+#1 
+Prediction =5
+output 5 
+
+#2 
+Prediction =10
+output 10
+
+#3 
+Prediction =5
+output 5
+
+#4
+Prediction = 5
+output 5
+
+#5
+Prediction = 5 , none
+output 5 , none
+
+#6 
+Prediction = 3 , 5
+output 3 , 5
+
+#7
+Prediction = 25
+output 25
+
+#8
+Prediction = 100 , 10
+output 100 , 10
+
+#9
+Prediction = 7 , 14 , 21
+output 7 , 14 , 21
+
+#10
+Prediction = 8
+output 8
+
+#11
+Prediction = 500 , 500 , 300 , 500
+output 500 , 500 , 300 , 500
+
+#12
+Prediction = 500 , 500 , 300 , 500 , 500
+output 500 , 500 , 300 , 500
+
+#13
+Prediction = 500 , 500 , 300 , 300
+output 500 , 500 , 300 , 300
+
+#14
+Prediction = 1 , 2 , 3
+output 1 , 3 , 2
+
+#15
+Prediction = 1 , 10 , 3 , 5
+output 1 , 3 , 5 , 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
