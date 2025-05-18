@@ -1,0 +1,25 @@
+h1 {
+    background-color: black;
+    width: 20%; height: 40;
+    color: aqua
+    text-align: left;
+    padding: auto;
+}
+
+h2 {
+    background-color: purple;
+
+    color: white;
+    text-align: center;
+    text-decoration-style: wavy;
+}
+
+h3 {
+    background-color: aqua;
+    color: black;
+    text-align: right;
+}
+
+span {
+    color: white;
+}
