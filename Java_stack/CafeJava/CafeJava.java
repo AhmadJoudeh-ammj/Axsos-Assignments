@@ -1,4 +1,3 @@
-import javax.swing.plaf.TreeUI;
 
 public class CafeJava {
     public static void main(String[] args) {
@@ -28,7 +27,7 @@ public class CafeJava {
         
             // APP INTERACTION SIMULATION (Add your code for the challenges below)
             // Example:
-            System.out.println(customer2+readyMessage ); // Displays "Welcome to Cafe Java, Shatha"
+            System.out.println(generalGreeting +""+customer3+readyMessage); // Displays "Welcome to Cafe Java, Shatha"
             // ** Your customer interaction print statements will go here ** //
             
 

@@ -1,13 +1,13 @@
 import java.util.Random;
 
-   public class PuzzleJava {
+public class PuzzleJava {
     Random random = new Random();
 
     // 1. getTenRolls: Returns array of 10 random ints from 1–20
     public int[] getTenRolls() {
         int[] rolls = new int[10];
         for (int i = 0; i < 10; i++) {
-            rolls[i] = random.nextInt(20) + 1;
+            rolls[i] = random.nextInt(20)+1;
         }
         return rolls;
     }
