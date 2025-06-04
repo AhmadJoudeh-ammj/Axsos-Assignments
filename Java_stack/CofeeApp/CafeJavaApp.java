@@ -6,4 +6,3 @@ public class CafeJavaApp {
         // Run the kiosk application
         kiosk.runKiosk();
     }
-}
