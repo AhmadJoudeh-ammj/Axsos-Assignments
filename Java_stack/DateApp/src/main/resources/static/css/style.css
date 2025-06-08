@@ -1,0 +1,42 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.center-container {
+	
+    display: flex;
+    justify-content: center;  /* horizontal center */
+    align-items: center;      /* vertical center */
+    height: 50vh;            /* full viewport height */
+    background-color: white; 
+}
+
+.nav-links {
+    display: flex;
+    gap: 250px; /* space between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #007bff;
+}
+
+.nav-links a:hover {
+    color: #0056b3;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: blue;
+}
+
+p {
+    font-size: 1.5rem;
+    text-align: center;
+    color: black;
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Date Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/alert.js"></script>
+</head>
+<body th:attr="onload=|showInfo('Date: ${formattedTime}')|">	
+    <div class="center-container">
+        <div>
+            <h2>Current Date</h2>
+            <p th:text="${formattedTime}"></p>
+        </div>
+    </div>
+</body>
+</html>
