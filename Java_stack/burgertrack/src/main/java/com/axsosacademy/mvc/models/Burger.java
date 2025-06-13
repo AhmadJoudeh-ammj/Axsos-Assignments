@@ -2,6 +2,8 @@ package com.axsosacademy.mvc.models;
 
 import java.util.Date;
 
+//import com.axsosacademy.mvc.repositories.BurgerRepository;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +20,7 @@ public class Burger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	public Long id;
 
     @NotBlank(message = "Burger name is required")
     private String burgerName;
@@ -59,4 +61,5 @@ public class Burger {
     public void setNotes(String notes) { this.notes = notes; }
     public Date getCreatedAt() { return createdAt; }
     public Date getUpdatedAt() { return updatedAt; }
+
 }

@@ -38,26 +38,34 @@
         <button class="btn btn-primary">Add Burger</button>
     </form:form>
 
-    <h3>All Burgers</h3>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Burger</th>
-                <th>Restaurant</th>
-                <th>Rating</th>
-                <th>Notes</th>
-            </tr>
-        </thead>
-        <tbody>
-        <c:forEach var="burger" items="${burgers}">
-            <tr>
-                <td><c:out value="${burger.burgerName}"/></td>
-                <td><c:out value="${burger.restaurantName}"/></td>
-                <td><c:out value="${burger.rating}"/></td>
-                <td><c:out value="${burger.notes}"/></td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
+ <h3>All Burgers</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Burger</th>
+            <th>Restaurant</th>
+            <th>Rating</th>
+            <th>Notes</th>
+            <th>Last Updated</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="burger" items="${burgers}">
+        <tr>
+            <td><c:out value="${burger.id}"/></td>
+            <td><c:out value="${burger.burgerName}"/></td>
+            <td><c:out value="${burger.restaurantName}"/></td>
+            <td><c:out value="${burger.rating}"/></td>
+            <td><c:out value="${burger.notes}"/></td>
+            <td><c:out value="${burger.updatedAt}"/></td>
+            <td>
+                <a href="/burgers/${burger.id}/update" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 </body>
 </html>
