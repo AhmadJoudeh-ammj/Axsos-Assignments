@@ -1,0 +1,135 @@
+1. Console.log(hello);
+Var hello = "world";
+-----------------------
+Predicted : Undefined 
+Real Output : Undefined
+-----------------------
+
+
+2. Var needle = "haystack";
+test();
+
+function test(){
+ Var needle = "magnet";
+ Console.log(needle);
+}
+---------------------
+Predicted: magnet
+Real Output :magnet
+---------------------
+
+
+3. Var Brendan = 'super cool';
+function print(){
+Brendan = 'only okay';
+Console.log (Brendan);
+}
+console.log(Brendan);
+----------------------- 
+Predicted : supercool  //function was never called 
+Real Output: super cool
+-----------------------
+
+
+4.var food = 'chicken";
+Console.log(food);
+eat();
+function eat(){
+Food =;half-chicken";
+console.log(food);
+Var food = "gone";
+}
+----------------------- 
+Predicted : chicken , half-chicken
+Real Output: chicken , half-chicken
+-----------------------
+
+
+5.mean();
+console.log(food);
+ Var mean = function (){
+Food = 'chicken';
+Var food = 'fish';
+console.log(food);
+}
+Console.log (food);
+----------------------- 
+Predicted : type error , mean(); is not a function , function name is also missing.
+Real Output: type error 
+-----------------------
+
+
+
+6.  Console.log (genre);
+Var genre = 'disco';
+Rewind ();
+Function rewind(){
+Genre = ;rock'
+Console.log (genre);
+Var genre = 'r&b';
+Console.log(genre);
+}
+Console.log(genre);
+
+----------------------- 
+Predicted : undefined , rock , r&b , disco
+Real Output: undefined , rock , r&b , disco
+-----------------------
+
+
+
+7.dojo = 'San Jose';
+Console.log(dojo);
+learn();
+
+Function learn () {
+Dojo = 'Seattle";
+console.log(dojo);
+Var dojo = "burbank';
+console.log(dojo);
+}
+console.log(dojo);
+----------------------- 
+Predicted : San Jose , seattle ,burbank , San Jose
+Real Output: San Jose , seattle ,burbank , San Jose
+-----------------------
+
+8. Console.log (makeDojo("chicago" , 65));
+console.log(makeDojo("Berkeley", 0 ));
+Function makeDojo(name , students) {
+Dojo.name = name;
+Dojo.students = students;
+If (dojo.students>50){
+Dojo.hiring = true;
+}
+Else if (dojo.students <=0){
+Dojo = "closed for now !";
+}
+Return dojo;
+}
+----------------------- 
+Predicted : TypeError: Assignment to constant variable.
+Real Output: TypeError: Assignment to constant variable.
+Dojo is constant it can't be reassigned , u can change its attribute like dojo.status = "closed for now !"
+
+Fixed code :
+
+console.log (makeDojo("chicago",65));
+console.log(makeDojo("Berkeley",0));
+function makeDojo(name,students) {
+  const dojo = {};
+dojo.name = name;
+dojo.students = students;
+if(dojo.students>50){
+dojo.hiring = true;
+}
+else if (dojo.students <=0){
+dojo = "closed for now !";
+}
+return dojo;
+}
+-----------------------
+
+
+
+
