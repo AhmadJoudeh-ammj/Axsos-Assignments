@@ -1,0 +1,98 @@
+
+1.
+
+Const cars = [ 'Tesla' , 'Mercedes' , 'Honda']
+Const [ randomCar ] = cars;
+Const [,otherRandomCar] = cars;
+
+console.log (randomCar);
+Console.log (,otherRandomCar);
+_______________________________
+Predicted : Tesla , Mercedes
+Output : Tesla , Mercedes.  
+_______________________________
+
+
+
+
+2.
+
+Const employee= { name: 'Elon' , age: 47 , company: 'Tesla' }
+Const{name:otherName}= employee;
+
+console.log(name);
+console.log(otherName);
+_________________________________
+Predicted : Error name is Undefined > name was assigned to otherName .
+Output : Error name is Undefined > 
+_________________________________
+
+
+
+3.
+
+const person = {name: 'Phil Smith', age: 47, height: '6 feet'};
+ 
+const password = '12345';
+
+const { password: hashedPassword } = person;
+
+console.log(password);
+console.log(hashedPassword);
+______________________________
+
+Predicted : 12345 , undefined (no password key found in person object)
+Output : 12345 , undefined .
+______________________________
+
+
+
+
+4.
+
+const numbers = [8, 2, 3, 5, 6, 1, 67, 12, 2];
+
+const [, first] = numbers;             // first = 2
+const [,,, second] = numbers;          // second = 5
+const [,,,,,,,, third] = numbers;      // third = 2
+
+// Predict the output
+console.log(first == second);          // false
+console.log(first == third); 
+
+———————————————————————————————————
+*Predicted : false :
+(console.log(first == second) comma means skip first element which is 8 , next element is 2 , is 2 equal to first element value ? No then its false , 
+*Predicted : true :
+[,,,,,,,,means skip 8 elements so const third = 2 which is the last element and also equal to first element value . Which was defined in const [, first ] which is 2
+
+Output : false , true 
+
+
+
+
+5.
+
+
+const lastTest = {key: 'value', secondKey: [1, 5, 1, 8, 3, 3]};
+
+const { key } = lastTest;
+const { secondKey } = lastTest;
+const [, willThisWork] = secondKey;
+
+console.log(key);              // 'value'
+console.log(secondKey);       // [1, 5, 1, 8, 3, 3]
+console.log(secondKey[0]);    // 1
+console.log(willThisWork);    // 5
+_______________________________
+Predicted : 
+Value , [1,5,1,8,3] , 1  , 5 
+Key = value.  SecondKey = [1 , 5 , 1 , 8 , 3, 3] , secondKey[0] = 1 , willThisWork = 5
+
+Output :
+Value , [1,5,1,8,3], 1 , 5
+______________________________
+
+ 
+
+
