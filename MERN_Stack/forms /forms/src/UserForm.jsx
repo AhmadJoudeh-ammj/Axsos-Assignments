@@ -1,103 +1,99 @@
-import React, { useState } from 'react';
+import React from 'react'; // No need for useState or useEffect
+import { useForm } from 'react-hook-form';
 
 export default function LiveRegistrationForm() {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
+  
+    const { register, handleSubmit, watch, formState: { errors } } = useForm({
+        mode: 'onBlur', // Best for UX: validate when a user leaves a field
+        defaultValues: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        }
     });
 
-    const [showPassword, setShowPassword] = useState(false);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value
-        }));
+    
+    const onSubmit = (data) => {
+        alert("Form Submitted Successfully!");
+        console.log("Form Data:", data);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert("Form submitted");
-        console.log("Form Data:", formData);
-    };
+    const password = watch('password');
 
+    
     return (
         <div className="form">
             <h1>Registration Form</h1>
-            <form onSubmit={handleSubmit} method="post" className="reg-form">
+            {/* 4. Pass your clean onSubmit function to handleSubmit */}
+            <form onSubmit={handleSubmit(onSubmit)} className="reg-form">
                 <label htmlFor="firstName">First Name</label>
                 <input
                     type="text"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
+                    // 5. Register the field and define its validation rules here.
+                    {...register('firstName', {
+                        required: 'First Name is required',
+                        minLength: { value: 2, message: 'First Name must be at least 2 characters' }
+                    })}
                 />
-                <br /><br />
+                <br />
+
+                {/* The 'errors' object from useForm works automatically */}
+                {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
 
                 <label htmlFor="lastName">Last Name</label>
                 <input
                     type="text"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
+                    {...register('lastName', {
+                        required: 'Last Name is required',
+                        minLength: { value: 2, message: 'Last Name must be at least 2 characters' }
+                    })}
                 />
-                <br /><br />
+                <br />
+
+                {errors.lastName && <p className="error-message">{errors.lastName.message}</p>}
 
                 <label htmlFor="email">Email</label>
                 <input
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
-                <br /><br />
+                    {...register('email', {
+                        required: 'Email is required',
+                        pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Please enter a valid email' }
+                    })}
 
+                />
+                <br />
+
+
+
+                {errors.email && <p className="error-message">{errors.email.message}</p>}
                 <label htmlFor="password">Password</label>
                 <input
-                    type={showPassword ? "text" : "password"}
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
+                    type="password"
+                    {...register('password', {
+                        required: 'Password is required',
+                        minLength: { value: 8, message: 'Password must be at least 8 characters' }
+                    })}
                 />
-                <br /><br />
+                <br />
+
+                {errors.password && <p className="error-message">{errors.password.message}</p>}
 
                 <label htmlFor="confirmPassword">Confirm Password</label>
                 <input
-                    type={showPassword ? "text" : "password"}
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
+                    type="password"
+                    {...register('confirmPassword', {
+                        required: 'Please confirm your password',
+                        validate: value => value === password || 'Passwords must match'
+                    })}
                 />
                 <br />
 
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={showPassword}
-                        onChange={() => setShowPassword(prev => !prev)}
-                    /> Show Password
-                </label>
-                <br />
+                {errors.confirmPassword && <p className="error-message">{errors.confirmPassword.message}</p>}
 
-                <button
-                    type="submit"
-                    className="btn-reg"
-                >
-                    Register
-                </button>
+                <button type="submit" className="btn-reg">Register</button>
             </form>
-
-            <h3> Form Data</h3>
-            <div className='form-data'>
-                <p>First Name:{formData.firstName}</p>
-                <p>Last Name: {formData.lastName}</p>
-                <p>Email: {formData.email}</p>
-                <p>Password: {formData.password}</p>
-            </div>
         </div>
     );
 }

@@ -23,18 +23,35 @@
     .live {
         margin-top: 50px;
         margin-bottom: 20px;
+
     }
 
     .reg-form {
-        height: 350px;
+        height: 430px;
     }
 
-    .btn-reg{
+    .btn-reg {
         width: 100px;
         height: 30px;
         border-radius: 30px;
         background-color: gray;
         color: whitesmoke;
+
     }
 
+    .error-message {
+        color: red;
+        font-size: small;
+    }
 
+    .form-data {
+        font-size: small;
+        word-spacing: 1px;
+    }
+
+    .check {
+        margin-right: 20px;
+        font-size: small;
+        text-decoration: underline;
+        color: blue;
+    }
