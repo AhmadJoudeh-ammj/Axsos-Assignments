@@ -1,0 +1,32 @@
+body {
+  background-color: whitesmoke;
+}
+
+.mainContent {
+  padding-bottom: 600px;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  text-align: center;
+}
+
+.mainContent h2 {
+  color: purple;
+}
+
+#name {
+  color: purple;
+  font-size: x-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#nameInput {
+  color: rgb(153, 20, 113);
+  background-color: rgb(215, 204, 204);
+  text-align: left;
+  border-radius: 0.4rem;
+  border-style: none;
+  opacity: 2rem;
+}

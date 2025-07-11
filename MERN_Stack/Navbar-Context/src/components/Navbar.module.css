@@ -1,0 +1,37 @@
+.navbar {
+    /* --- CORE FIX FOR FULL WIDTH --- */
+    width: 100%;
+    /* Force the navbar to be 100% of the browser width */
+    margin-left: 0;
+    /* Remove any space on the left */
+    margin-right: 0;
+    /* Remove any space on the right */
+    box-sizing: border-box;
+    /* Ensures padding is included in the width, not added on */
+
+
+    /* --- STYLING --- */
+    background: linear-gradient(90deg, #4b0082, #8a2be2);
+    color: #ffffff;
+    padding: 20px 30px;
+    align-content: center;
+    height: 150px;
+    /* 20px top/bottom, 30px left/right for text spacing */
+    border-radius: 0;
+    /* No rounded corners for a clean bar look */
+    text-align: right;
+}
+
+.greeting {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
