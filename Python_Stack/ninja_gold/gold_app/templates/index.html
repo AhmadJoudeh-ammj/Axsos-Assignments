@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Gold</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center py-10">
+
+    <h1 class="text-4xl font-bold mb-6">💰 Ninja Gold Game</h1>
+
+    <div class="bg-white rounded-xl shadow-lg p-6 mb-4 w-full max-w-2xl text-center">
+        <h2 class="text-xl font-semibold">Current Gold: <span class="text-yellow-500">{{ request.session.gold }}</span></h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-6xl px-6">
+        {% for loc in locations %}
+            <div class="bg-white rounded-xl shadow-md p-4 text-center border border-gray-200">
+                <h3 class="text-xl font-semibold capitalize">{{ loc }}</h3>
+                <p class="text-sm text-gray-600 mt-1">
+                    {% if loc == 'quest' %}
+                        (earns or loses 0-50 gold)
+                    {% else %}
+                        (earns 10-20 gold)
+                    {% endif %}
+                </p>
+                <form method="POST" action="{% url 'process_money' %}" class="mt-4">
+                    {% csrf_token %}
+                    <input type="hidden" name="location" value="{{ loc }}">
+                    <button type="submit" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-full shadow">
+                        Find Gold!
+                    </button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="w-full max-w-4xl mt-8 px-6">
+        <h3 class="text-lg font-semibold mb-2">Activity Log</h3>
+        <div class="bg-white border rounded-xl p-4 h-64 overflow-y-auto shadow">
+            {% for entry in request.session.activities %}
+                <p class="{% if entry.color == 'green' %}text-green-600{% else %}text-red-600{% endif %} mb-1">
+                    {{ entry.text }}
+                </p>
+            {% empty %}
+                <p class="text-gray-500">No activity yet...</p>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
