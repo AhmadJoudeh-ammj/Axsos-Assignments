@@ -1,0 +1,231 @@
+user@users-MacBook-Pro ~ % mongosh "mongodb+srv://cluster0.qvwqtrf.mongodb.net/" --apiVersion 1 --username aljoudeh88
+
+
+Enter password: *********
+Current Mongosh Log ID:	6876c8ac84160aa608a6ab67
+Connecting to:		mongodb+srv://<credentials>@cluster0.qvwqtrf.mongodb.net/?appName=mongosh+2.5.5
+Using MongoDB:		8.0.11 (API Version 1)
+Using Mongosh:		2.5.5
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+Atlas atlas-b1paid-shard-0 [primary] test> use my_first_db
+| 
+switched to db my_first_db
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.insertMany([
+|   {
+|     name: "Alice",
+|     home_state: "California",
+|     lucky_number: 4,
+|     birthday: { month: 5, day: 15, year: 2000 }
+|   },
+|   {
+|     name: "Bob",
+|     home_state: "Washington",
+|     lucky_number: 7,
+|     birthday: { month: 7, day: 23, year: 1999 }
+|   },
+|   {
+|     name: "Charlie",
+|     home_state: "Texas",
+|     lucky_number: 2,
+|     birthday: { month: 3, day: 10, year: 2001 }
+|   },
+|   {
+|     name: "Diana",
+|     home_state: "California",
+|     lucky_number: 1,
+|     birthday: { month: 1, day: 1, year: 1998 }
+|   },
+|   {
+|     name: "Evan",
+|     home_state: "Washington",
+|     lucky_number: 5,
+|     birthday: { month: 12, day: 31, year: 2002 }
+|   }
+| ])
+
+------------------------------------------------
+
+| db.students.find().pretty()
+| 
+[
+  {
+    _id: ObjectId('6876c8e684160aa608a6ab68'),
+    name: 'Alice',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 5, day: 15, year: 2000 }
+  },
+  {
+    _id: ObjectId('6876c8e684160aa608a6ab69'),
+    name: 'Bob',
+    home_state: 'Washington',
+    lucky_number: 7,
+    birthday: { month: 7, day: 23, year: 1999 }
+  },
+  {
+    _id: ObjectId('6876c8e684160aa608a6ab6a'),
+    name: 'Charlie',
+    home_state: 'Texas',
+    lucky_number: 2,
+    birthday: { month: 3, day: 10, year: 2001 }
+  },
+  {
+    _id: ObjectId('6876c8e684160aa608a6ab6b'),
+    name: 'Diana',
+    home_state: 'California',
+    lucky_number: 1,
+    birthday: { month: 1, day: 1, year: 1998 }
+  },
+  {
+    _id: ObjectId('6876c8e684160aa608a6ab6c'),
+    name: 'Evan',
+    home_state: 'Washington',
+    lucky_number: 5,
+    birthday: { month: 12, day: 31, year: 2002 }
+  }
+]
+-----------------------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.find({
+|   lucky_number: { $gt: 3 }
+| })
+[
+  {
+    _id: ObjectId('6876c8e684160aa608a6ab68'),
+    name: 'Alice',
+    home_state: 'California',
+    lucky_number: 4,
+    birthday: { month: 5, day: 15, year: 2000 }
+  },
+  {
+    _id: ObjectId('6876c8e684160aa608a6ab69'),
+    name: 'Bob',
+    home_state: 'Washington',
+    lucky_number: 7,
+    birthday: { month: 7, day: 23, year: 1999 }
+  },
+  {
+    _id: ObjectId('6876c8e684160aa608a6ab6c'),
+    name: 'Evan',
+    home_state: 'Washington',
+    lucky_number: 5,
+    birthday: { month: 12, day: 31, year: 2002 }
+  }
+]
+
+----------------------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.updateMany({}, {
+|   $set: {
+|     interests: ["coding", "brunch", "MongoDB"]
+|   }
+| })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+
+------------------------------------
+
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.updateOne({ name: "Alice" }, { $addToSet: { interests: "hiking" } })
+| db.students.updateOne({ name: "Bob" }, { $addToSet: { interests: "gaming" } })
+| db.students.updateOne({ name: "Charlie" }, { $addToSet: { interests: "reading" } })
+| db.students.updateOne({ name: "Diana" }, { $addToSet: { interests: "cooking" } })
+| db.students.updateOne({ name: "Evan" }, { $addToSet: { interests: "photography" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+-----------------------------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.updateOne({ name: "Alice" }, { $addToSet: { interests: "taxes" } })
+| 
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+---------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.updateOne({ name: "Alice" }, { $pull: { interests: "taxes" } })
+| 
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+----------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.deleteMany({ home_state: "California" })
+| 
+{ acknowledged: true, deletedCount: 2 }
+
+----------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.deleteOne({ name: "Charlie" })
+| 
+{ acknowledged: true, deletedCount: 1 }
+
+----------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.deleteOne({ lucky_number: { $gt: 5 } })
+| 
+{ acknowledged: true, deletedCount: 1 }
+
+----------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.updateMany({}, {
+|   $set: { number_of_belts: 0 }
+| })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+----------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.updateMany({ home_state: "Washington" }, {
+|   $inc: { number_of_belts: 1 }
+| })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+----------------------------------------------
+
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> db.students.updateMany({}, {
+|   $currentDate: { updated_on: true }
+| })
+| 
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-b1paid-shard-0 [primary] my_first_db> 
