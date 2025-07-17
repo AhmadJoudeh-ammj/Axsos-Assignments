@@ -1,0 +1,170 @@
+:root {
+  --primary-color: #6d28d9; /* A modern purple */
+  --primary-hover: #5b21b6;
+  --secondary-color: #db2777; /* A modern pink for accents/delete */
+  --secondary-hover: #be185d;
+  --background-color: #f3f4f6; /* Light gray background */
+  --surface-color: #ffffff; /* White for cards/tables */
+  --text-primary: #1f2937; /* Dark gray for text */
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+  --error-color: #dc2626;
+}
+
+/* 2. Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color );
+  color: var(--text-primary);
+}
+
+/* 3. Main App Container */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* 4. Typography */
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 5. Button Styles */
+button, .btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  display: inline-block; /* For Link components styled as buttons */
+  text-align: center;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.btn-primary, button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn-primary:hover, button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary, button[type="button"] {
+  background-color: #e5e7eb;
+  color: var(--text-primary);
+}
+.btn-secondary:hover, button[type="button"]:hover {
+  background-color: #d1d5db;
+}
+
+.btn-delete {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.btn-delete:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* 6. Form Styles */
+.author-form {
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* 7. Table Styles */
+.authors-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.authors-table th, .authors-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.authors-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.authors-table td .actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* 8. Error Message Styles */
+.error-box {
+  padding: 1rem;
+  background-color: #fee2e2;
+  border: 1px solid var(--error-color);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.error-box p {
+  color: var(--error-color);
+  font-weight: 500;
+  margin: 0;
+}
