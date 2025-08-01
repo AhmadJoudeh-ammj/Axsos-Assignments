@@ -1,0 +1,42 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Create Project - Developers Dashboard{% endblock %}
+
+{% block content %}
+<div class="form-container" style="max-width: 600px;">
+    <h1 class="form-title">Create Project</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="name">Project Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter project name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control" rows="4"
+                placeholder="Enter project description" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="start_date">Start Date</label>
+            <input type="date" id="start_date" name="start_date" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="end_date">End Date</label>
+            <input type="date" id="end_date" name="end_date" class="form-control" required>
+        </div>
+
+        <div style="display: flex; gap: 1rem;">
+            <button type="submit" class="btn btn-success" style="flex: 1;">Create</button>
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary" style="flex: 1; text-align: center;">Back</a>
+        </div>
+    </form>
+</div>
+
+
+
+{% endblock %}
